@@ -39,7 +39,7 @@ public class RetrofitService {
 		
 		Gson gson = new GsonBuilder().create();
 
-		Retrofit retrofit = new Retrofit.Builder().baseUrl("http://localhost:8081/springbootwar/")
+		Retrofit retrofit = new Retrofit.Builder().baseUrl("http://localhost:8081/")
 				.addConverterFactory(GsonConverterFactory.create(gson))
 				.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 				.client(okhttp)

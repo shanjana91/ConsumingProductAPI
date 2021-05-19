@@ -17,17 +17,18 @@ import retrofit2.http.Path;
 
 public interface RetrofitInterface {
 	
-	@GET("/getproducts")
+	// calling from localhost:8081/springbootwar/ --> PRODUCT API deployed as war in tomcat container
+	@GET("springbootwar/getproducts")
 	public Single<List<Product>> getproducts(); 
 	
-	@GET("/getById/{id}")
+	@GET("springbootwar/getById/{id}")
 	public Single<Product> getProductById(@Path("id") int id);
 	
-	@POST("/create")
+	@POST("springbootwar/create")
 	public Single<Product> createProduct(@Body Product product);
 	
 	
-	@DELETE("/delete/{id}")
+	@DELETE("springbootwar/delete/{id}")
 	public Single<DeleteResponseModel> deleteProduct(@Path("id") int id);
 	
 }
